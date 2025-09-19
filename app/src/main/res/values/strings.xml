@@ -1,0 +1,112 @@
+<resources>
+    <string name="app_name">VentaExpress</string>
+    <string name="app_description">Sistema de venta de vehículos</string>
+
+    <!-- Auth -->
+    <string name="email">Correo electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="confirm_password">Confirmar contraseña</string>
+    <string name="nombre">Nombre completo</string>
+    <string name="login">Iniciar Sesión</string>
+    <string name="register">Registrarse</string>
+    <string name="already_have_account">¿Ya tienes cuenta? Inicia sesión aquí</string>
+    <string name="no_account">¿No tienes cuenta? Regístrate aquí</string>
+    <string name="login_with">O inicia sesión con:</string>
+    <string name="forgot_password">¿Olvidaste tu contraseña?</string>
+
+    <!-- Productos -->
+    <string name="productos">Productos</string>
+    <string name="agregar_producto">Agregar Producto</string>
+    <string name="editar_producto">Editar Producto</string>
+    <string name="nombre_producto">Nombre del producto</string>
+    <string name="descripcion">Descripción</string>
+    <string name="precio">Precio</string>
+    <string name="stock">Stock</string>
+    <string name="guardar">Guardar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="precio_invalido">Precio inválido</string>
+    <string name="stock_invalido">Stock inválido</string>
+    <string name="precio_minimo">El precio debe ser mayor a 0</string>
+    <string name="stock_minimo">El stock no puede ser negativo</string>
+
+    <!-- Clientes -->
+    <string name="clientes">Clientes</string>
+    <string name="agregar_cliente">Agregar Cliente</string>
+    <string name="editar_cliente">Editar Cliente</string>
+    <string name="telefono">Teléfono</string>
+    <string name="telefono_invalido">Formato inválido. Use: ####-####</string>
+    <string name="correo_invalido">Correo electrónico inválido</string>
+    <string name="telefono_ejemplo">Ej: 2222-3333</string>
+
+    <!-- Ventas -->
+    <string name="ventas">Ventas</string>
+    <string name="nueva_venta">Nueva Venta</string>
+    <string name="cliente">Cliente</string>
+    <string name="productos_seleccionados">Productos seleccionados</string>
+    <string name="cantidad">Cantidad</string>
+    <string name="total">Total</string>
+    <string name="fecha">Fecha</string>
+    <string name="seleccionar_cliente">Seleccionar Cliente</string>
+    <string name="seleccionar_productos">Seleccionar Productos</string>
+    <string name="finalizar_venta">Finalizar Venta</string>
+    <string name="historial_ventas">Historial de Ventas</string>
+    <string name="venta_exitosa">Venta realizada exitosamente</string>
+
+    <!-- Mensajes generales -->
+    <string name="exito">Éxito</string>
+    <string name="error">Error</string>
+    <string name="advertencia">Advertencia</string>
+    <string name="confirmacion">Confirmación</string>
+    <string name="si">Sí</string>
+    <string name="no">No</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="campos_obligatorios">Todos los campos son obligatorios</string>
+    <string name="operacion_exitosa">Operación realizada con éxito</string>
+    <string name="error_conexion">Error de conexión. Verifique su internet</string>
+    <string name="cargando">Cargando…</string>
+    <string name="editar">Editar</string>
+    <string name="agregar">Agregar</string>
+
+    <!-- Empty States -->
+    <string name="no_productos">No hay productos registrados\nPresione el botón + para agregar uno</string>
+    <string name="no_clientes">No hay clientes registrados\nPresione el botón + para agregar uno</string>
+    <string name="no_ventas">No hay ventas registradas\nPresione el botón + para crear una nueva</string>
+    <string name="no_productos_seleccionados">No hay productos seleccionados</string>
+    <string name="no_clientes_disponibles">No hay clientes disponibles</string>
+    <string name="no_productos_disponibles">No hay productos disponibles</string>
+
+    <!-- Validaciones -->
+    <string name="min_caracteres">Mínimo %d caracteres</string>
+    <string name="max_caracteres">Máximo %d caracteres</string>
+    <string name="caracteres_requeridos">Este campo es requerido</string>
+    <string name="formato_invalido">Formato inválido</string>
+
+    <!-- Menú -->
+    <string name="menu_logout">Cerrar sesión</string>
+    <string name="menu_profile">Perfil</string>
+
+    <!-- Facebook Configuration -->
+    <string name="facebook_app_id">802488972467587</string>
+    <string name="facebook_client_token">0fd0d44dd5631ff71979defa826b9a81</string>
+    <string name="fb_login_protocol_scheme">fb802488972467587</string>
+
+    <!-- GitHub -->
+    <string name="github_login">Iniciar con GitHub</string>
+
+    <!-- Formato de precios -->
+    <string name="precio_formato">$%1$.2f</string>
+    <string name="cantidad_formato">%d unidades</string>
+
+    <!-- Fechas -->
+    <string name="fecha_formato">dd/MM/yyyy HH:mm</string>
+    <string name="hoy">Hoy</string>
+    <string name="ayer">Ayer</string>
+
+    <!-- Estados -->
+    <string name="disponible">Disponible</string>
+    <string name="agotado">Agotado</string>
+    <string name="stock_bajo">Stock bajo</string>
+    <string name="activo">Activo</string>
+    <string name="inactivo">Inactivo</string>
+</resources>

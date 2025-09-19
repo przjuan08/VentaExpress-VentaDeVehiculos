@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary"
+        app:title="VentaExpress"
+        app:titleTextColor="@color/white"
+        app:navigationIcon="@drawable/ic_car_logo"
+        app:menu="@menu/main_menu"
+        style="@style/Widget.VentaExpress.AppBar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingTop="24dp"
+        android:paddingBottom="24dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/ic_car_logo"
+            android:layout_marginBottom="32dp"
+            android:contentDescription="@string/app_name"
+            app:tint="@color/primary" />
+
+        <TextView
+            android:id="@+id/tvWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bienvenido"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="48dp"
+            android:textColor="@color/primary"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/btnProductos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/productos"
+            android:drawableStart="@drawable/ic_products"
+            android:drawablePadding="8dp"
+            android:backgroundTint="@color/primary"
+            android:textColor="@color/white"
+            android:layout_marginBottom="16dp"
+            style="@style/Widget.VentaExpress.Button" />
+
+        <Button
+            android:id="@+id/btnClientes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/clientes"
+            android:drawableStart="@drawable/ic_customers"
+            android:drawablePadding="8dp"
+            android:backgroundTint="@color/primary"
+            android:textColor="@color/white"
+            android:layout_marginBottom="16dp"
+            style="@style/Widget.VentaExpress.Button" />
+
+        <Button
+            android:id="@+id/btnVentas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ventas"
+            android:drawableStart="@drawable/ic_sales"
+            android:drawablePadding="8dp"
+            android:backgroundTint="@color/primary"
+            android:textColor="@color/white"
+            style="@style/Widget.VentaExpress.Button" />
+
+    </LinearLayout>
+
+</LinearLayout>

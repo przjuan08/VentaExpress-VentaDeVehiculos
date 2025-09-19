@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "461298847342",
+    "firebase_url": "https://ventaexpress-2bfdc-default-rtdb.firebaseio.com",
+    "project_id": "ventaexpress-2bfdc",
+    "storage_bucket": "ventaexpress-2bfdc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:461298847342:android:4b466bf1fc7519e449e07f",
+        "android_client_info": {
+          "package_name": "com.example.ventaexpress"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJCWw0meYZWkWTiLAIx7oFoE1wGe10jsI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
