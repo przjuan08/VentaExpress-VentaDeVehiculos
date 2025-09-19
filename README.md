@@ -12,6 +12,9 @@
 4. Elegir un dispositivo y correr el proyecto.
 
 ## Video Explicativo
+Link para ver el video de explicación:
+
+https://drive.google.com/drive/folders/1UBk6DI-3SvI9TkLlycobegs5SvZ-IvVC?usp=sharing
 
 
 ## Evidencia de trabajo en GitHub
