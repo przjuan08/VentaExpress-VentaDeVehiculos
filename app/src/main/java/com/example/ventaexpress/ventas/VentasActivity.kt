@@ -2,6 +2,7 @@ package com.example.ventaexpress.ventas
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -37,6 +38,8 @@ class VentasActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ventas)
 
+        Log.d("VentasActivity", "Activity creada") // Para debug
+
         // Inicializar Firebase
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
@@ -44,34 +47,48 @@ class VentasActivity : AppCompatActivity() {
         // Inicializar Loading Dialog
         loadingDialog = LoadingDialog(this)
 
-        // Inicializar vistas
+        // Inicializar vistas - ¡ESTO ES CRÍTICO!
         rvVentas = findViewById(R.id.rvVentas)
         fabNuevaVenta = findViewById(R.id.fabNuevaVenta)
         tvEmptyState = findViewById(R.id.tvEmptyState)
         tvTotalVentas = findViewById(R.id.tvTotalVentas)
         spinKit = findViewById(R.id.spinKit)
 
+        // Verificar que las vistas se encontraron
+        if (fabNuevaVenta == null) {
+            Log.e("VentasActivity", "fabNuevaVenta es null!")
+        } else {
+            Log.d("VentasActivity", "fabNuevaVenta encontrado")
+        }
+
         // Configurar RecyclerView
         ventaAdapter = VentaAdapter(emptyList())
-
         rvVentas.layoutManager = LinearLayoutManager(this)
         rvVentas.adapter = ventaAdapter
 
-        // Configurar listeners - SOLO para el FAB
+        // Configurar listeners - FORMA MÁS EXPLÍCITA
         fabNuevaVenta.setOnClickListener {
-            nuevaVenta()
+            try {
+                Log.d("VentasActivity", "Intentando iniciar NuevaVentaActivity")
+                val intent = Intent(this@VentasActivity, NuevaVentaActivity::class.java)
+                startActivity(intent)
+                Log.d("VentasActivity", "Activity iniciada exitosamente")
+            } catch (e: Exception) {
+                Log.e("VentasActivity", "Error al iniciar activity: ${e.message}")
+                e.printStackTrace()
+            }
         }
-
-        // Asegurar que el FAB no intercepte otros clics
-        fabNuevaVenta.isClickable = true
-        fabNuevaVenta.isFocusable = true
 
         // Cargar ventas
         cargarVentas()
     }
 
     private fun cargarVentas() {
-        val userId = auth.currentUser?.uid ?: return
+        val userId = auth.currentUser?.uid
+        if (userId == null) {
+            Log.e("VentasActivity", "Usuario no autenticado")
+            return
+        }
 
         showLoading(true)
 
@@ -95,14 +112,12 @@ class VentasActivity : AppCompatActivity() {
 
                 ventaAdapter.updateData(ventas)
 
-                // Formatear el total con comas
+                // Formatear el total
                 val formatter = java.text.DecimalFormat("$#,###.##")
                 formatter.minimumFractionDigits = 2
                 formatter.maximumFractionDigits = 2
 
-                // Obtener nombre del usuario actual
                 val userName = auth.currentUser?.displayName ?: "Vendedor"
-
                 tvTotalVentas.text = "$userName, has vendido: ${formatter.format(totalVentas)}"
 
                 // Mostrar u ocultar empty state
@@ -121,6 +136,7 @@ class VentasActivity : AppCompatActivity() {
 
             override fun onCancelled(error: DatabaseError) {
                 showLoading(false)
+                Log.e("VentasActivity", "Error cargando ventas: ${error.message}")
                 if (!NetworkUtils.isNetworkAvailable(this@VentasActivity)) {
                     tvEmptyState.text = "Error de conexión. Verifique su internet"
                 } else {
@@ -134,6 +150,7 @@ class VentasActivity : AppCompatActivity() {
     }
 
     private fun nuevaVenta() {
+        Log.d("VentasActivity", "Nueva venta iniciada")
         val intent = Intent(this, NuevaVentaActivity::class.java)
         startActivity(intent)
     }
